@@ -1,0 +1,9 @@
+INFO - eval_vision.py - 2025-07-30 03:27:50,005 - synthesis_path: /rds/projects/c/chenhp-dm-mia/Diff-MIA-Attack/DP-Promise_Github/checkpoints/dp-promise/dp-promise_Train_celeba32_Eps1.0_celeba_eps1.0_0725-07:04:43/evaluation/synthesis.npz
+INFO - eval_vision.py - 2025-07-30 03:27:50,005 - output_path: results/celeba32/Eps1.0
+INFO - eval_vision.py - 2025-07-30 03:27:50,005 - batch_size: 128
+INFO - eval_vision.py - 2025-07-30 03:27:50,005 - dataset: celeba
+INFO - eval_vision.py - 2025-07-30 03:27:50,005 - seed: 42
+INFO - eval_vision.py - 2025-07-30 03:27:51,608 - Compute activations...
+INFO - load.py - 2025-07-30 03:27:53,283 - Fingerprint not found. Saved model loading will continue.
+INFO - eval_vision.py - 2025-07-30 03:38:54,686 - IS: 2.5794012546539307
+INFO - eval_vision.py - 2025-07-30 03:38:54,686 - FID: 17.866021681683478
