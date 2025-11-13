@@ -17,16 +17,16 @@ The repository also includes **black-box and white-box membership inference atta
 - `DCTDiff_Black_Box_Attack.ipynb` – Black-box MIAs on DCTDiff.  
 - `DP-Promise_White_Box_Attack.ipynb` – White-box MIAs on DP-Promise.  
 
-All **trained checkpoints, processed datasets, and generated samples (.npz)** are hosted on Google Drive. Configurations and evaluation results are included in this repository for reproducibility.
+Configurations and evaluation results are included in this repository under respective Models for reproducibility.
 
 ---
 
 ## Model Setup
 
 ### DP-Promise
-1. Clone the original [DP-Promise GitHub repository](#).  
+1. Cloned the original [https://github.com/deabfc/dp-promise].  
 2. Install required packages from `requirements.txt`.  
-3. **Data processing**:  
+3. **Data processing** `DP-Promise_Model_Eval.ipynb`:  
    - Download CelebA dataset (open-source from Kaggle).  
    - Preprocess into $32 \times 32$ and $64 \times 64$ resolutions.  
    - Apply 80/20 train–test split (train/test sets hosted on Google Drive).  
@@ -45,15 +45,14 @@ All **trained checkpoints, processed datasets, and generated samples (.npz)** ar
 ---
 
 ### DCTDiff
+Cloned the original [https://github.com/forever208/DCTdiff]
 1. Use the preprocessed CelebA $64 \times 64$ dataset from DP-Promise.  
-2. Install packages from notebook cell (`DCTDiff_Model_Eval.ipynb`).  
+2. Install packages from notebook cell `DCTDiff_Model_Eval.ipynb` (Refered from original DCTDiff Github Repo).  
 3. Train model using provided job setup.  
 4. Evaluate generated images using FID across three samplers:  
    - DPM-Solver, Euler ODE, Euler SDE.  
 5. Generate samples with all samplers at varying **Number of Function Evaluations (NFE)**: 10, 20, 50, 100.  
 6. Adopt $NFE=100$ for attack experiments.  
-
-All checkpoints, generated samples (.npz), and evaluations are provided in Google Drive.
 
 ---
 
@@ -71,7 +70,10 @@ All checkpoints, generated samples (.npz), and evaluations are provided in Googl
 - **DCTDiff (`DCTDiff_Black_Box_Attack.ipynb`)**:  
   - Convert `.npz` to `.png` for attacks.  
   - CLIP + LPIPS features across samplers (DPM, ODE, SDE).  
-  - Seeds 42 and 1234 + median results over 10 seeds with ROC–AUC and score histograms.  
+  - Experiments:
+     - Celeba 64 with Seeds 42 and 1234.
+     - scales: 1K, 10K generated images vs. member/nonmener splits.
+     - Median results over 10 seeds with ROC–AUC and score histograms.  
 
 ---
 
@@ -95,17 +97,13 @@ All checkpoints, generated samples (.npz), and evaluations are provided in Googl
 - **Generated samples** – Stored as `.npz` files.  
 - **Evaluation outputs** – IS/FID results and attack plots.  
 
-All are hosted in Google Drive (links available in the repository).
-
 ---
 
 ## Reproducibility Notes
 - Config files for all training runs are under `config/`.  
 - Evaluation results (FID, IS, ROC–AUC, histograms) are under `Evaluation/`.  
-- Attacks follow the sequence in respective notebooks and reproduce results from the thesis.  
+- Attacks follow the sequence in respective notebooks and reproduce results from the thesis.
+- All ROC-AUC Curves, Histograms and reconstruction Images across models and attacks are under `MIA_Attack_Result`.
 
 ---
-
-## Citation
-If you use this repository or the methodology in your work, please cite:  
 
